@@ -23,6 +23,11 @@ public class SLList {
 
     /** Adds an item to the front of the list. */
     public void addFirst(int x) {
+        if(first==null){
+            first = new IntNode(x, null);
+            size = 1;
+            return ;
+        }
         first = new IntNode(x, first);
         size += 1;
     }    
@@ -39,6 +44,7 @@ public class SLList {
 
     /** Adds an item to the end of the list. */
     public void addLast(int x) {
+        size += 1;
         IntNode p = first;
 
         /* Advance p to the end of the list. */
